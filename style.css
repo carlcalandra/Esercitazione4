@@ -1,7 +1,8 @@
 *{
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
-
 
 body {
     margin: 0;
@@ -69,6 +70,10 @@ padding: 1rem 0;
     margin: 2rem 0;
 }
 
+.mx-1 {
+    margin: 0 1rem;
+}
+
 .mx-2 {
     margin: 0 2rem;
 }
@@ -84,8 +89,12 @@ padding: 1rem 0;
 
 #nav-menu {
     height: 35px;
+    width: 100%;
     display: flex;
     align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 3;
 }
 
 .btn {
@@ -125,12 +134,13 @@ padding: 1rem 0;
 }
 
 .box-shadow {
-    box-shadow: 10px 10px 10px #E0E4E7;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, .5);
 }
 
 .img-container {
     overflow: hidden;
     box-sizing: border-box;
+    position: relative;
 }
 
 .flex  {
@@ -157,7 +167,6 @@ padding: 1rem 0;
 
 .menu-list {
     list-style: none;
-    margin: 0;
 }
 
 .menu-list li {
@@ -170,7 +179,6 @@ padding: 1rem 0;
     text-align: center;
     text-decoration: none;
     padding: 0 0.5rem;
-
 }
 
 .card {
@@ -220,7 +228,8 @@ padding: 1rem 0;
     position: absolute;
     top: 50%;
     left:50%;
-    transform:translate(-50%, -50%)
+    transform:translate(-50%, -50%);
+    z-index: 0;
 }
 
 .img-card-body > div {
@@ -241,4 +250,53 @@ padding: 1rem 0;
 .card-footer-text {
     font-weight: 300;
     font-size: .7rem;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);   
+}
+
+.add-cart-button:visited, .add-cart-button:link  {
+    background-color: #017185;
+    color: #ffff;
+    position: absolute;
+    bottom: 10px;
+    width: 75%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.add-cart-button i {
+    margin: 0 10px;
+}
+
+.add-favourite {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.img-container .fa-heart {
+    font-size: 30px;
+    color: #FFFFFF;
+}
+
+.show-on-hover {
+    z-index: 0;
+    opacity: 0;
+}
+
+.img-container:hover .show-on-hover {
+    z-index: 2;
+    opacity: 100%;
 }
